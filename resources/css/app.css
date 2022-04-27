@@ -1,0 +1,42 @@
+/* Global custom CSS */
+.bg-primary-color{
+    background-color: #fff;
+}
+.bg-secondary-color{
+    background-color: #635E5E;
+}
+.bg-main-color{
+    background-color: #E27209!important
+}
+.primary-color{
+    color: #E27209;
+}
+.secondary-color{
+    color: #fff!important;
+}
+.small-icon{
+    width: 20px;
+    height: 20px;
+}
+.responsible-icon{
+    width:  3vh;
+    height: 3vh;
+}
+.disabled-events{
+    pointer-events: none;
+}
+.opacity-hover{
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+.opacity-hover:hover{
+    color: inherit;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.cursor-default {
+    cursor: default;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
