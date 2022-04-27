@@ -63,21 +63,23 @@
 @include('footer')
 
 <script>
+    // request the price simulation
     $('#request-price-simulation').on('click', function(){
-        var origin      = $('#origin').val();
-        var destination = $('#destination').val();
+        var origin      = $('#origin').find(":selected").text();
+        var destination = $('#destination').find(":selected").text();
         var callTime    = $('#callTime').val();
         callTime = onlyNumbers(callTime);
         if(callTime == '' || callTime == 0){
-            alert('enter something');
+            addMessageToToast('Informe o tempo da chamada');
             return;
         }
         var chosenPlan = $('.callPlans-groupment:checked');
         if(chosenPlan.length == 0){
-            alert('choose a plan');
+            addMessageToToast('Escolha um plano de ligações');
             return;
         }
         var callPlanId = chosenPlan.attr('data-callPlanId');
+        openLoader();
         $.ajax({
             url: "{{ \App\Models\URLHandler::viewLink('simulatecallprice') }}",
             method: 'POST',
@@ -87,14 +89,16 @@
 
             },
             failure: function(){
-                // window.location.reload();
+                addMessageToToast('Um erro ocorreu, tente novamente');
+                return;
             },
             complete: function(){
-                // here make the loader dissapear
+                openLoader(true);
             }
         });
     });
 
+    // formats the value entered on the callTime input field preventing non numeric values and inserting a word at the end
     $('#callTime').on('input', function(){
         var value = $(this).val();
         var formatedValue = onlyNumbers(value);
@@ -102,20 +106,13 @@
         $('#callTime').val(formatedValue);
     });
 
+    // strips all non numeric characters from value sent
     function onlyNumbers(value){
         var formatedValue = value.replace(/\D/g, "");
         return formatedValue;
     }
 
-    $('.callPlans-groupment').on('click', function(){
-        $('.callPlans-groupment').prop('checked', false);
-        $('.callPlans-groupment').parents('.card').css('opacity', '0.5');
-        $('.callPlans-groupment').parents('.card').find('.card-title').removeClass('primary-color');
-        $(this).prop('checked', true);
-        $(this).parents('.card').css('opacity', '1');
-        $(this).parents('.card').find('.card-title').addClass('primary-color');
-    });
-
+    // handles click on card
     $('.card').on('click', function(){
         if($(this).hasClass('manually-clicked') == true){
             $(this).removeClass('manually-clicked');
@@ -123,5 +120,15 @@
         }
         $(this).addClass('manually-clicked');
         $(this).find('.callPlans-groupment').click();
+    });
+
+    // perform the management of the CallPlans checkbox and style
+    $('.callPlans-groupment').on('click', function(){
+        $('.callPlans-groupment').prop('checked', false);
+        $('.callPlans-groupment').parents('.card').css('opacity', '0.5');
+        $('.callPlans-groupment').parents('.card').find('.card-title').removeClass('primary-color');
+        $(this).prop('checked', true);
+        $(this).parents('.card').css('opacity', '1');
+        $(this).parents('.card').find('.card-title').addClass('primary-color');
     });
 </script>
