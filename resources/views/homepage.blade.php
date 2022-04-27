@@ -58,6 +58,9 @@
             </div>
         </div>
     </div>
+    <div>
+        <p id="simulation-result" class="h4"></p>
+    </div>
 </section>
 
 @include('footer')
@@ -86,7 +89,10 @@
             data: {origin: origin, destination: destination, callTime: callTime, callPlanId: callPlanId},
             dataType: 'JSON',
             success: function(result){
-
+                if(result.success == true){
+                    closeToast();
+                    $('#simulation-result').text(result.value);
+                }
             },
             failure: function(){
                 addMessageToToast('Um erro ocorreu, tente novamente');
