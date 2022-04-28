@@ -21,7 +21,7 @@
         @endforeach
     </div>
     <div class="text-center">
-        <a id="see-tax-values" class="btn btn-secondary">
+        <a onclick="seeTaxValues()" class="btn btn-secondary">
             Ver valores de tarifas
         </a>
     </div>
@@ -39,7 +39,7 @@
         </div>
         <div class="col-sm-10 col-md-5 text-right text-center-sm mt-5-sm">
             <p class="h4">
-                Nos somos a Tenzir
+                Nos somos a Tenzir telefonia
             </p>
             <p class="mt-5">
                 Empresa de telefonia especializada em chamadas de longa distância nacional e referência do mercado Brasileiro.
@@ -141,6 +141,7 @@
             },
             failure: function(){
                 addMessageToToast('Um erro ocorreu, tente novamente');
+                openLoader(true);
                 return;
             },
             complete: function(){
@@ -183,11 +184,29 @@
         $(this).parents('.card').find('.card-title').addClass('primary-color');
     });
 
-    $('#see-tax-values').on('click', function(){
-
-    });
-
+    // fetches a dddCode tax value
     function seeTaxValues(){
-
+        openLoader();
+        $.ajax({
+            url: "{{ \App\Helpers\URLHandler::viewLink('listdddcodesvalue') }}",
+            method: 'POST',
+            dataType: 'JSON',
+            success: function(result){
+                if(result.success == true){
+                    closeToast();
+                    addModalContent('Tabela de preços', result.content, true);
+                    hideModalElement('positive-btn');
+                    openModal();
+                }
+            },
+            failure: function(){
+                addMessageToToast('Um erro ocorreu, tente novamente');
+                openLoader(true);
+                return;
+            },
+            complete: function(){
+                openLoader(true);
+            }
+        });
     }
 </script>

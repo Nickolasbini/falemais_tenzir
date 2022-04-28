@@ -209,7 +209,7 @@ class DddCodesValue extends Model
      */
     public function getAllDDDCodesOrderedByOrigin()
     {
-        return DddCodesValue::where('id', '>', '1')->orderBy('origin')->get();
+        return DddCodesValue::where('id', '>', '0')->orderBy('identificator')->get();
     }
 
     /**
@@ -295,7 +295,7 @@ class DddCodesValue extends Model
         $tableGeneratorObj = new TableGenerator($dddCodesValues);
         $tableGeneratorObj->setHidden($attributesToHide);
         $columnTranslation = [
-            'origin'         => 'DDD de Origin',
+            'origin'         => 'DDD de Origem',
             'destination'    => 'DDD de Destino',
             'formatedPrice'  => 'Preço por minuto'
         ];

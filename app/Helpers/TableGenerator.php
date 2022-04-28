@@ -173,7 +173,7 @@ class TableGenerator
         $objectsArray      = $this->getDataArray();
         $columnsToHide     = $this->getHidden();
         $headerTranslation = $this->getHeaderTranslation();
-        $html =  '<table>';
+        $html  = '<table class="table table-sm">';
         $html .= '<thead>';
         $html .= '<tr>';
         $headers = $this->getHeaders();
@@ -182,7 +182,7 @@ class TableGenerator
                 continue;
             if(array_key_exists($header, $headerTranslation))
                 $header = $headerTranslation[$header];
-            $html .= '<td>'.$header.'</td>';
+            $html .= '<th scope="col">'.$header.'</th>';
         }
         $html .= '</tr>';
         $html .= '</thead>';
