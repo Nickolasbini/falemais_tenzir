@@ -1,7 +1,7 @@
 <div aria-live="polite" aria-atomic="true">
     <div id="main-toast" class="toast mt-4 me-4" style="position:fixed; top:0; right:0; z-index:100000; background-color:rgb(255, 255, 255);">
         <div class="toast-header">
-            <strong class="mr-auto primary-color">{{ ucfirst(env('APP_NAME')) }}</strong>
+            <strong class="mr-auto primary-color">Tenzir</strong>
             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" onclick="closeToast()">
                 <span aria-hidden="true">&times;</span>
             </button>

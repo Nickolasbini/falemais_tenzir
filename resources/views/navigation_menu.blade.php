@@ -6,7 +6,7 @@
         <div class="container-fluid row nav-bar-items">
             <div class="col-sm-2 d-flex dropdown-menu-button-wrapper justify-content-between">
                 <a class="navbar-brand cursor-pointer" href="{{ \App\Helpers\URLHandler::viewLink('/') }}" data-toggle="tooltip" data-placement="top" title="Página inicial">
-					<h5 class="primary-color mt-auto mb-auto">Fale Mais</span></h5></a>
+					<h4 class="primary-color mt-auto mb-auto">Tenzir <span class="h6"> Telefonias</span></h5></a>
                 <button type="button" class="navbar-toggler float-right" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -32,6 +32,14 @@ class SimulatorController extends Controller
                 'value'   => null
             ]);
         }
+        $callTimeInMinutes = (int)$callTimeInMinutes;
+        if(!is_integer($callTimeInMinutes) || $callTimeInMinutes == 0){
+            return json_encode([
+                'success' => false,
+                'message' => 'duração da chamada deve ser um número',
+                'value'   => null
+            ]);
+        }
         if($originDDD == $destinationDDD){
             return json_encode([
                 'success' => false,
