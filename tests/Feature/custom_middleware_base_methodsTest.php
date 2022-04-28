@@ -17,6 +17,9 @@ class custom_middleware_base_methodsTest extends TestCase
     {
         $response = $this->get('homepage');
         // get here on bd and see if it has the base data
+        $dddCodes = new \App\Models\DddCodesValue();
+        
+
         $response->assertStatus(200);
     }
 }
