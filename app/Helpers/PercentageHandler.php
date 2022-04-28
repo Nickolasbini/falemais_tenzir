@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Helpers;
 
 class PercentageHandler
 {
@@ -17,5 +17,19 @@ class PercentageHandler
             return $value;
         $increasedValue = ($value / 100) * $percentage;
         return $value + $increasedValue;
+    }
+
+    /**
+     * Formats sent value to match currency
+     *
+     * @param  int    the value to format
+     * @param  string the currency type
+     * @return string
+     */
+    public static function formatValue($value, $currency = 'R$')
+    {   
+        if($value < 0.1)
+            return $value;
+        return $currency . number_format((float)$value, 2, ',', ' ');
     }
 }

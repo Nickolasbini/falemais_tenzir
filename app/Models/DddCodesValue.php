@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Helpers\PercentageHandler;
+use App\Helpers\TableGenerator;
 use Illuminate\Database\Eloquent\Model;
 
 class DddCodesValue extends Model
@@ -203,6 +205,16 @@ class DddCodesValue extends Model
     /**
      * Returns total number of all DddCodesValue matching identificators sent
      *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getAllDDDCodesOrderedByOrigin()
+    {
+        return DddCodesValue::where('id', '>', '1')->orderBy('origin')->get();
+    }
+
+    /**
+     * Returns total number of all DddCodesValue matching identificators sent
+     *
      * @param  array
      * @return int
      */
@@ -268,5 +280,26 @@ class DddCodesValue extends Model
             $exeedingMinutes--;
         }
         return round($increasedValue, 2);
+    }
+
+    public function generateHtmlListOfDddCodesValue()
+    {
+        $dddCodesValues = $this->getAllDDDCodesOrderedByOrigin();
+        if($dddCodesValues->count() == 0)
+            return null;
+        $attributesToHide = ['id', 'pricePerMinute', 'identificator', 'created_at', 'updated_at'];
+        foreach($dddCodesValues as $dddCodesValue){
+            $price = $dddCodesValue->pricePerMinute;
+            $dddCodesValue->formatedPrice = PercentageHandler::formatValue($price);
+        }
+        $tableGeneratorObj = new TableGenerator($dddCodesValues);
+        $tableGeneratorObj->setHidden($attributesToHide);
+        $columnTranslation = [
+            'origin'         => 'DDD de Origin',
+            'destination'    => 'DDD de Destino',
+            'formatedPrice'  => 'Preço por minuto'
+        ];
+        $tableGeneratorObj->setHeaderTranslation($columnTranslation);
+        return $tableGeneratorObj->getTableHtml();
     }
 }

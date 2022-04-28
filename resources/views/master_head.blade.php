@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fale Mais - Tenzir</title>
-    <link rel="icon" href="{{ asset('backgrounds/home-background.webp') }}">
+    <link rel="icon" href="{{ asset('images/about-us.webp') }}">
 
     <!-- App CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -15,6 +15,7 @@
 
 @include('components/loader_of_page')
 @include('components/toast_messager')
+@include('components/modal')
 
 <script src="{{ asset('externalfeatures/bootstrap.js') }}"></script>
 <script src="{{ asset('externalfeatures/jquery.js') }}"></script>

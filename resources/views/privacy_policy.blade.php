@@ -99,7 +99,7 @@
 
     Tendo em vista a preservação de sua privacidade, a <em class="primary-color">{{ucfirst(env('APP_NAME'))}}</em> não compartilhará seus dados pessoais com nenhum terceiro. 
 
-    Você pode ter maiores informações sobre os Cookies que utilizamos e como eles funcionam na nossa Política de Cookies, disponível neste link <a href="{{\App\Models\URLHandler::ViewLink('cookiespolicy')}}">Política de cookies</a>.
+    Você pode ter maiores informações sobre os Cookies que utilizamos e como eles funcionam na nossa Política de Cookies, disponível neste link <a href="{{\App\Helpers\URLHandler::ViewLink('cookiespolicy')}}">Política de cookies</a>.
     
     <h4 class="primary-color mt-5 text-center pb-2">9. Alteração desta Política de Privacidade</h4>
 

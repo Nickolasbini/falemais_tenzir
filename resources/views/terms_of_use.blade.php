@@ -6,7 +6,7 @@
 
     Seja bem-vindo ao nosso site. Leia com atenção todos os termos abaixo.
 
-    Este documento, e todo o conteúdo do site é oferecido por <em class="primary-color h5">{{ucfirst(env('APP_NAME'))}}</em class="primary-color">, neste termo representado apenas por “EMPRESA”, que regulamenta todos os direitos e obrigações com todos que acessam o site, denominado neste termo como “VISITANTE”, reguardado todos os direitos previstos na legislação, trazem as cláusulas abaixo como requisito para acesso e visita do mesmo, situado no endereço <a href="{{\App\Models\URLHandler::viewLink('/')}}">www.tenzir.com.br</a>.
+    Este documento, e todo o conteúdo do site é oferecido por <em class="primary-color h5">{{ucfirst(env('APP_NAME'))}}</em class="primary-color">, neste termo representado apenas por “EMPRESA”, que regulamenta todos os direitos e obrigações com todos que acessam o site, denominado neste termo como “VISITANTE”, reguardado todos os direitos previstos na legislação, trazem as cláusulas abaixo como requisito para acesso e visita do mesmo, situado no endereço <a href="{{\App\Helpers\URLHandler::viewLink('/')}}">www.tenzir.com.br</a>.
 
     A permanência no website implica-se automaticamente na leitura e aceitação tácita do presente termos de uso a seguir. Este termo foi atualizado pela última vez em 14 de setembro de 2021.
     <h4 class="mt-5 primary-color text-center">DA FUNÇÃO DO SITE</h4>

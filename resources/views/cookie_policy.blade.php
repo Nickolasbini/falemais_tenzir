@@ -4,7 +4,7 @@
 
     <h2 class="mt-3 primary-color text-center">Política de Cookies</h2>
 
-    A presente Política de Cookies é um documento complementar à Política de Privacidade da <em class="primary-color">{{env('APP_NAME')}}</em>, disponível neste link: <a href="{{\App\Models\URLHandler::viewLink('privacypolicy')}}">Política de privacidade</a>. Aqui, você encontrará informações objetivas e claras sobre o que são Cookies, quais Cookies utilizamos em nossas aplicações, qual papel desempenham e como configurá-los.
+    A presente Política de Cookies é um documento complementar à Política de Privacidade da <em class="primary-color">{{env('APP_NAME')}}</em>, disponível neste link: <a href="{{\App\Helpers\URLHandler::viewLink('privacypolicy')}}">Política de privacidade</a>. Aqui, você encontrará informações objetivas e claras sobre o que são Cookies, quais Cookies utilizamos em nossas aplicações, qual papel desempenham e como configurá-los.
     <h4 class="mt-5 primary-color text-center">1. O que são Cookies?</h4>
 
     Cookies são pequenos arquivos de texto ou fragmentos de informação que são baixados em seu computador, smartphone ou qualquer outro dispositivo com acesso à internet quando você visita nossa aplicação.
@@ -43,7 +43,7 @@
 
     Abaixo listamos todos os Cookies que podem ser utilizados pela <em class="primary-color">{{env('APP_NAME')}}</em>. É importante lembrar que você pode gerenciar a permissão concedida para cada Cookie em seu navegador.
 
-    Além disso, uma vez que os Cookies capturam dados sobre você, aconselhamos a leitura de nossa Política de Privacidade, disponível neste link <a href="{{\App\Models\URLHandler::viewLink('privacypolicy')}}">Política de privacidade</a>.
+    Além disso, uma vez que os Cookies capturam dados sobre você, aconselhamos a leitura de nossa Política de Privacidade, disponível neste link <a href="{{\App\Helpers\URLHandler::viewLink('privacypolicy')}}">Política de privacidade</a>.
     
     <h4 class="mt-5 primary-color text-center">4. Gerenciamento dos Cookies</h4>
 
