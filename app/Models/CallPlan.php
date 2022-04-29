@@ -182,11 +182,11 @@ class CallPlan extends Model
      */
     public function createBaseCallPlans()
     {
-        $baseCallPlans                 = $this->getCallPlans();
-        $callPlansObjectPlanNamesArray = $this->getCallPlansNames();
-        $createdObjects                = [];
+        $baseCallPlans  = $this->getCallPlans();
+        $createdObjects = [];
         foreach($baseCallPlans as $callPlan){
-            if(in_array($callPlan['planName'], $callPlansObjectPlanNamesArray))
+            $total = $this->getCallPlansTotalByPlanNames([$callPlan['planName']]);
+            if($total > 0)
                 continue;
             $newObject = $this::create(
                 $callPlan
