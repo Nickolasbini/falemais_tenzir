@@ -32,6 +32,21 @@ Para buscar dependências do projeto
     password = null
 ```
 
+Para criar as tabelas no banco de dados
+```
+    php artisan migrate
+```
+
+Para atualizar os dados do cache de toda a aplicação
+```
+    php artisan optimize
+```
+
+Para atualizar os dados do .env
+```
+    php artisan config:clear
+```
+
 Para gerar um servidor local
 ```
     php artisan serve
@@ -92,5 +107,5 @@ A aplicação conta com alguns testes para verificar o funcionamento da simulaç
 
 Para executar todos os testes
 ```
-    php artisan serve
+    php artisan test
 ```
