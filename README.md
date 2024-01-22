@@ -1,6 +1,8 @@
 # Tenzir telefonia
 
-Este projeto é um show case da forma como desenvolvo meus códigos e as tecnicas empregadas afim de, exemplificar meus pontos fortes e fracos.
+Este projeto é um showcase da forma como desenvolver meus códigos e as tecnicas empregadas afim de, exemplificar meus pontos fortes e fracos.
+
+This project is a showcase of the way I develop my codes and the techniques used in order to exemplify my strengths and weaknesses.
 
 
 # Requisitos
